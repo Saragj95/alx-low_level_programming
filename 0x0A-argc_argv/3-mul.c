@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	int mul;
+	int mul, val1, val2;
 
 	if (argc != 3)
 	{
@@ -21,7 +21,9 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		mul = atoi(argv[1]) * atoi(argv[2]);
+		val1 = atoi(argv[1]);
+		val2 = atoi(argv[2]);
+		mul = val1 * val2;
 		printf("%d\n", mul);
 	}
 	return (0);
