@@ -20,9 +20,13 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
+	buffer = malloc(size * sizeof(char));
+	if (buffer == NULL)
+	{
+		return (NULL);
+	}
 	else
 	{
-		buffer = malloc(size * sizeof(char));
 		while (i < size)
 		{
 			buffer[i] = c;
