@@ -30,10 +30,6 @@ char *str_concat(char *s1, char *s2)
 			{
 				concat[i] = s1[i];
 			}
-			else if (i == length1)
-			{
-				concat[i] = ' ';
-			}
 			else if ((i > length1) && (i <= (length2 + length1 + 1)))
 			{
 				concat[i] = s2[j];
