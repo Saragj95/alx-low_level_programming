@@ -1,0 +1,1 @@
+pt install vim gcc
