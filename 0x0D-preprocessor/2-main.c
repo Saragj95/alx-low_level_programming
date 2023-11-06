@@ -12,7 +12,7 @@ int main()
 	size_t j;
 	char c[100];
 
-	strncpy(c, __FILE__, sizeof(c) - 1); 
+	strncpy(c, __FILE__, sizeof(c) - 1);
 	c[sizeof(c) - 1] = '\0';
 	for (j = 0; j < strlen(__FILE__); j++)
 	{
