@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
+
 /**
- * main - check the code
+ * main - prints the name of the file it was compiled from
  *
  * Return: Always 0.
  */
+
 int main()
 {
 	size_t j;
