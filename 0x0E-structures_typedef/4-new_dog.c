@@ -15,9 +15,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *new_dog_ptr;
 	char *name_copy, *owner_copy;
 
-	new_dog_ptr = malloc(sizeof(dog_t) + 2);
+	new_dog_ptr = malloc(sizeof(dog_t));
 	if (new_dog_ptr == NULL)
 	{
+		free(new_dog_ptr);
 		return (NULL);
 	}
 
