@@ -40,5 +40,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog_ptr->age = age;
 	new_dog_ptr->owner = owner_copy;
 
+	new_dog_ptr->dynamic_strings = 1;
+
 	return (new_dog_ptr);
 }
