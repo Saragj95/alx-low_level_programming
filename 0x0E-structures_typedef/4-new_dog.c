@@ -28,10 +28,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
+	age_copy = strdup(age);
+	if (age_copy == NULL)
+	{
+		free(name_copy);
+		free(owner_coppy);
+		free(new_dog_ptr);
+		return (NULL);
+	}
+
 	owner_copy = strdup(owner);
 	if (owner_copy == NULL)
 	{
 		free(name_copy);
+		free(age_copy);
 		free(new_dog_ptr);
 		return (NULL);
 	}
@@ -40,7 +50,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	new_dog_ptr->age = age;
 	new_dog_ptr->owner = owner_copy;
 
-	new_dog_ptr->dynamic_strings = 1;
 
 	return (new_dog_ptr);
 }
