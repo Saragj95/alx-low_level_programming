@@ -4,9 +4,16 @@
 #include <string.h>
 #include <stdlib.h>
 
+ /**
+ * print_strings - Prints strings, followed by a new line.
+ * @separator: The string to be printed between strings.
+ * @n: The number of strings passed to the function.
+ * @...: A variable number of strings to be printed.
+*/
+
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-        va_list x;
+	va_list x;
 	unsigned int i;
 	char *string;
 
@@ -32,11 +39,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			{
 				printf("%s%s", string, separator);
 			}
-			if ((i == (n - 1) || separator == NULL) && string != NULL) 
+			if ((i == (n - 1) || separator == NULL) && string != NULL)
 			{
 				printf("%s", string);
 			}
-			
 		}
 	}
 	va_end(x);
