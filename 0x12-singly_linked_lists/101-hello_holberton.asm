@@ -1,16 +1,16 @@
 section .data
-hello db "Hello, Holberton", 0
+	hello db "Hello, Holberton", 0
 
 section .text
-global main
+	global main
 
-extern printf
+	extern printf
 
 main:
-mov rdi, hello
-call printf
+	mov rdi, hello
+	call printf
 
-; Exit the program
-mov rax, 60         ; syscall: exi
-xor rdi, rdi        ; status: 0
-syscall
+	; Exit the program
+	mov rax, 60         ; syscall: exi
+	xor rdi, rdi        ; status: 0
+	syscall
