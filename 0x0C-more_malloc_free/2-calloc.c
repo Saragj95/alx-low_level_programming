@@ -11,36 +11,24 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int **barray;
-	int *sarray;
-	long unsigned int i, j;
+	void *array;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
-		return (NULL);
+		return NULL;
 	}
-	barray = malloc(sizeof(void *) * nmemb);
-	if (barray == NULL)
+
+	array = malloc(nmemb * size);
+	if (array == (NULL))
 	{
 		return (NULL);
 	}
-	for (i = 0; i < nmemb; i++)
+
+	for (i = 0; i < nmemb * size; i++)
 	{
-		sarray = malloc(size);
-		if (sarray == NULL)
-		{
-			for (j = 0; j < i; j++)
-			{
-				free(barray[j]);
-			}
-			free(barray);
-			return (NULL);
-		}
-		barray[i] = sarray;
-		for (j = 0; j < (sizeof(int) * size); j++)
-		{
-			((int *)barray[i])[j] = 0;
-		}
+		((char *)array)[i] = 0;
 	}
-	return (barray);
+
+	return (array);
 }
