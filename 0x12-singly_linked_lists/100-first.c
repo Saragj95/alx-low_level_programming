@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include "lists.h"
 
-void print_message(void)
+/**
+ * prints - prints a sentence before the main function is executed
+ */
+
+void prints(void) __attribute__((constructor));
+void prints(void)
 {
     printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
 }
