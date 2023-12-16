@@ -31,7 +31,7 @@ int *get_binary(unsigned long int n)
 	{
 		return (NULL);
 	}
-	for (i = 0; i <= bits - 1;i++)
+	for (i = 0; i <= bits - 1; i++)
 	{
 		if ((n >> i) & 1)
 		{
