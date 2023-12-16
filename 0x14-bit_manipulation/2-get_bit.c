@@ -11,18 +11,27 @@
 
 int *get_binary(unsigned long int n)
 {
-	int bits;
-	int i;
+	int bits = 0, i;
 	int leadingZeroes = 1;
 	int *j;
 
 	if (n == 0)
 	{
-		return (0);
+		j = malloc(sizeof(int));
+		if (j == NULL)
+		{
+			return (NULL);
+		}
+		j[0] = 0;
+		return (j);
 	}
 	bits = sizeof(unsigned long int) * 8;
-	j = malloc(sizeof(bits) * sizeof(int));
-	for (i = bits - 1; i >= 0; i--)
+	j = malloc(sizeof(int) * (bits + 1));
+	if (j == NULL)
+	{
+		return (NULL);
+	}
+	for (i = 0; i <= bits - 1;i++)
 	{
 		if ((n >> i) & 1)
 		{
@@ -34,6 +43,7 @@ int *get_binary(unsigned long int n)
 			j[i] = 0;
 		}
 	}
+	j[bits] = -1;
 	return (j);
 }
 
@@ -51,6 +61,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	int *k;
 
 	k = get_binary(n);
+	if (k == NULL)
+	{
+		return (-1);
+	}
 	while (k[count] != -1)
 	{
 		count++;
