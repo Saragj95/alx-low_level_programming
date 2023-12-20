@@ -11,5 +11,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 int *get_binary(unsigned long int n);
 int *get_b(unsigned long int *n);
+int bi_to_int(int *b);
 
 #endif
