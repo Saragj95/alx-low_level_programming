@@ -16,18 +16,22 @@ size_t print_listint_safe(const listint_t *head)
 	f = head;
 	while (current != NULL)
 	{
-		printf("[%p] %d",(void*)current,current->n);
+		printf("[%p] %d", (void *)current, current->n);
 		printf("\n");
 		i++;
 		f = head;
 		while (f != current)
 		{
 			if (f == current->next)
-			{	
+			{
 				printf("-> [%p] %d\n", (void *)f, f->n);
 				exit(98);
 			}
 			f = f->next;
+		}
+		if (current->next == NULL)
+		{
+			break;
 		}
 		current = current->next;
 	}
